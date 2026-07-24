@@ -28,21 +28,36 @@ class Solution {
         if(s.length() != t.length()){
             return false;
         }
+        int[] freq = new int[26];
+        for(int i = 0; i < s.length();i++){
+            freq[s.charAt(i) - 'a']++;
+            freq[t.charAt(i) - 'a']--;
+        }
+        for(int i = 0; i< 26; i++){
+            if(freq[i] != 0){
+                return false;
+            }
+        }
+        return true;
 
-        char[] s1 = s.toCharArray();
-        char[] s2 = t.toCharArray();
-
-        Arrays.sort(s1);
-        Arrays.sort(s2);
-
-        // int i = 0;
-        // while(i < s1.length && i < s2.length){
-        //     if(s1[i] != s2[i]){
-        //         return false;
-        //     }
-        //     i++;
+        // if(s.length() != t.length()){
+        //     return false;
         // }
 
-        return Arrays.equals(s1,s2);
+        // char[] s1 = s.toCharArray();
+        // char[] s2 = t.toCharArray();
+
+        // Arrays.sort(s1);
+        // Arrays.sort(s2);
+
+        // // int i = 0;
+        // // while(i < s1.length && i < s2.length){
+        // //     if(s1[i] != s2[i]){
+        // //         return false;
+        // //     }
+        // //     i++;
+        // // }
+
+        // return Arrays.equals(s1,s2);
     }
 }
