@@ -35,13 +35,14 @@ class Solution {
         Arrays.sort(s1);
         Arrays.sort(s2);
 
-        int i = 0;
-        while(i < s1.length && i < s2.length){
-            if(s1[i] != s2[i]){
-                return false;
-            }
-            i++;
-        }
-        return true;
+        // int i = 0;
+        // while(i < s1.length && i < s2.length){
+        //     if(s1[i] != s2[i]){
+        //         return false;
+        //     }
+        //     i++;
+        // }
+
+        return Arrays.equals(s1,s2);
     }
 }
